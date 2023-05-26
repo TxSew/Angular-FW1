@@ -1,0 +1,28 @@
+<div class="container">
+
+<form (ngSubmit)="onSubmit(createProduct)" #createProduct="ngForm">
+  <div class="form-group">
+    <label for="username">fistName</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name" required>
+  </div>
+  <div class="form-group">
+    <label for="">image Url</label>
+    <input type="file" (change)="onSelectFile" class="form-control" id="email" name="price" [(ngModel)]="user.imageUrl" required>
+  </div>
+  <div class="form-group">
+    <label for="email">price</label>
+    <input type="email" class="form-control" i06341320d="email" name="price" [(ngModel)]="user.price" required>
+  </div>
+  <div class="form-group">
+    <label for="number">description</label>
+    <input type="text" class="form-control" id="username" name="description" [(ngModel)]="user.description" required>
+  </div>
+  <div class="form-group">
+    <label for="password">categoryID</label>
+    <input type="password" class="form-control" id="password" name="categoryID" [(ngModel)]="user.categoryID">
+  </div>
+  <button type="submit" class="btn btn-primary mt-2 px-5">Thêm sản phẩm!</button>
+</form>
+
+
+</div>

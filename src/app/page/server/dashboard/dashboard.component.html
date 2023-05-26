@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+  integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+<div class="container">
+  <div class="col-md-12 col-12 col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>Task Details</h4>
+        <div>
+          <button routerLink="/admin/create">create</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th class="text-center">
+                  <div class="custom-checkbox custom-checkbox-table custom-control">
+                    <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
+                      class="custom-control-input" id="checkbox-all">
+                    <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                  </div>
+                </th>
+                <th>Task Name</th>
+                <th>Progress</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+              <tr *ngFor="let item of productList">
+                <td class="p-0 text-center">
+                  <div class="custom-checkbox custom-control">
+                    <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
+                    <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                  </div>
+                </td>
+                <td>{{item.name}}</td>
+                <td class="align-middle">
+                  <div class="progress" data-height="4" data-toggle="tooltip" title="" data-original-title="100%"
+                    style="height: 4px;">
+                    <div class="progress-bar bg-success" data-width="100" style="width: 100px;"></div>
+                  </div>
+                </td>
+                <td>${{item.price}}</td>
+                <td>
+                  <a href="admin/update/{{item.slug}}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
+                    data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <button class="btn btn-danger btn-action"><i class="fas fa-trash"
+                      (click)="onRemove(item._id)"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

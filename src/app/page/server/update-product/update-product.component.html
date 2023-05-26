@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit(handleUpdate)" #handleUpdate="ngForm">
+  <div class="form-group">
+    <label for="username">fistName</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="products.name" required>
+  </div>
+  <div class="form-group">
+    <label for="username">imageUrl</label>
+    <input type="text" class="form-control" id="name" name="imageUrl" [(ngModel)]="products.imageUrl" required>
+  </div>
+  <div class="form-group">
+    <label for="email">price</label>
+    <input type="email" class="form-control" id="email" name="price" [(ngModel)]="products.price" required>
+  </div>
+  <div class="form-group">
+    <label for="number">des</label>
+    <input type="text" class="form-control" id="username" name="description" placeholder="{{products.description}}" [(ngModel)]="products.description" required>
+  </div>
+  <button type="submit">update!</button>
+</form>

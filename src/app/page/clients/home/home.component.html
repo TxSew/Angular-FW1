@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <div class="row mb-2">
+      <div class="col-7"></div>
+    </div>
+    <div class="row mb-4">
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>name</th>
+          <th>price</th>
+          <th>description</th>
+        </tr>
+        <tr *ngFor='let p of data'>
+          <td> <img width="200px" height="100px" [src]="p.imageUrl"></td>
+          <a href="/products/{{p.slug}}">
+            <td>{{p.name | uppercase}} </td>
+          </a>
+          <td>{{p.price}}</td>
+          <td>{{p. description}}</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
